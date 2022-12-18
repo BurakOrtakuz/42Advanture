@@ -6,13 +6,13 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:29:23 by bortakuz          #+#    #+#             */
-/*   Updated: 2022/12/18 17:34:10 by bortakuz         ###   ########.fr       */
+/*   Updated: 2022/12/18 17:48:59 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
-	if (c >= 1 && c <= 127)
+	if (c >= 0 && c <= 127)
 	{
 		return (1);
 	}

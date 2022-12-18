@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2022/12/19 01:48:57 by bortakuz         ###   ########.fr       */
+/*   Created: 2022/12/18 21:01:41 by bortakuz          #+#    #+#             */
+/*   Updated: 2022/12/19 02:03:43 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-#include <strings.h>
 
-int	main(void)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char	a[]="1234567890";
-	char	b[10];
-	char	c[]= "1234567890";
-	char	d[10];
-	ft_memcpy(b,a,8);
-	memcpy(d,c,8);
-	//a = "abcnkbj./ ,İ;hgıf  oasdfgkelş";
-	printf("Birinci:%s|\nIkinci :%s|\n",b,d );
+	size_t	i;
+
+	if (!b)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)b)[i] = (unsigned char)c;
+		i++;
+	}
+	return (b);
 }
