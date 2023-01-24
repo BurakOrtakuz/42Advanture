@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/24 21:42:26 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/01/24 20:58:13 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/01/24 20:58:45 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-#include <strings.h>
 
-int	main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	char *a = "asdfghjklasdfghjk";
-	char b[50] ="";
-	char c[50]="";
-	printf("%s %s\n",ft_strchr(a,'h'), strchr(a,'h'));
+	char	*p;
+
+	p = (char *)s;
+	while (s[0] != '\0')
+	{
+		if (s[0] == c)
+		{
+			p = (char *)s;
+			break ;
+		}
+		s++;
+	}
+	return (p);
 }
- 

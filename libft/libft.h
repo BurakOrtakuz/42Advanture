@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:20:39 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/24 20:34:55 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/01/25 01:34:33 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,9 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src,
 size_t	ft_strlcat(char *restrict dst, const char *restrict src,
 			size_t dstsize);
 int		ft_toupper(int c);
+int		ft_tolower(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	*ft_memchr(const char *s, int c);
 #endif

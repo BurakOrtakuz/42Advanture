@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/24 21:42:26 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/01/25 01:31:35 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/01/25 01:33:58 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-#include <strings.h>
-
-int	main(void)
+void	*ft_memchr(const char *s, int c)
 {
-	char *a = "asdfghjklasdfghjk";
-	char b[50] ="";
-	char c[50]="";
-	printf("%s %s\n",ft_strchr(a,'h'), strchr(a,'h'));
+	char	*p;
+
+	p = (void *)s;
+	while (s[0] != '\0')
+	{
+		if (s[0] == c)
+		{
+			p = (void *)s;
+			break ;
+		}
+		s++;
+	}
+	return (p);
 }
- 
