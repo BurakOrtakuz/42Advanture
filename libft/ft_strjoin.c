@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 11:50:35 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 12:22:58 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/01/25 12:21:17 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/01/25 12:30:27 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	char	*data;
 	int		i;
 	int		j;
 	int		k;
-	char	*data;
+	int		l;
 
-	data = (char *)ft_calloc(sizeof(char), len);
-	i = 0;
-	while (s[i] != start)
-		i++;
-	j = i + (unsigned int)len;
+	l = 0;
 	k = 0;
-	while (i < j)
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	data = (char *)ft_calloc(sizeof(char), i + j);
+	while (k + l < i + j)
 	{
-		data[k] = s[i];
-		i++;
-		k++;
+		if (k < i)
+		{
+			data[k] = s1[k];
+			k++;
+		}
+		else if (l < j)
+		{
+			data[k] = s2[l];
+			l++;
+		}
 	}
 	return (data);
 }

@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 11:59:15 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:03:18 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,16 @@
 
 int	main(void)
 {
-	char *a = "       -  12a113as<dz";
+	char *a = "1234 5678 6789 0678 9067 890";
 	char *b ="asdfghjksdfghjk";
 	char c[50]="";
 
-	printf("%d %d\n",ft(a), atoi(a));
+	int i = 0;
+	while(i< 6)
+	{
+		printf("%s|||\n",ft_split(a,' ')[i]);		
+		i++;
+	}
+
 }
  
