@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 01:39:06 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/01 22:37:23 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/02/02 02:01:04 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/02/02 02:20:38 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	size_t	i;
 
-	i = 0;
-	while (i < n)
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new;
+	t_list	*aux;
+	t_list	*temp;
+
+	if (!lst || !f)
+		return (0);
+	new = ft_lstnew(f(lst->content));
+	if (!new)
+		return (0);
+	aux = new;
+	lst = lst->next;
+	while (lst)
 	{
-		if (*(unsigned char *)s1 != *(unsigned char *)s2)
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
 		{
-			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+			ft_lstclear(&new, del);
+			return (0);
 		}
-		s1++;
-		s2++;
-		i++;
+		aux->next = temp;
+		aux = temp;
+		lst = lst->next;
 	}
-	return (0);
+	return (new);
 }

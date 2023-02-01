@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:24:37 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 11:49:23 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:36:38 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*area;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	area = malloc(count * size);

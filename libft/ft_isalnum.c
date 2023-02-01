@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:19:03 by bortakuz          #+#    #+#             */
-/*   Updated: 2022/12/18 17:25:40 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:33:58 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha || ft_isdigit)
+	if (ft_isalpha(c) || ft_isdigit(c))
 	{
 		return (1);
 	}

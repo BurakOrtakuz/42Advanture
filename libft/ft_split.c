@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:46:06 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 16:30:06 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:41:25 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ char	*piece(const char *s, char c, int k)
 char	**ft_split(char const *s, char c)
 {
 	char	**data;
-	char	*trimmed_data;
 	int		i;
 	int		k;
 

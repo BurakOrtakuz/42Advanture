@@ -6,13 +6,14 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 22:21:35 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/01 22:22:58 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:38:23 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "unistd.h"
 
-static int	ft_abs(int nbr)
+int	ft_abs(int nbr)
 {
 	if (nbr < 0)
 		return (-nbr);
@@ -20,8 +21,7 @@ static int	ft_abs(int nbr)
 		return (nbr);
 }
 
-void
-	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	str[13];
 	int		is_neg;

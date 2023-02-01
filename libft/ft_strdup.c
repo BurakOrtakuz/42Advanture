@@ -6,11 +6,12 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:47:17 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 11:49:46 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:40:41 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdlib.h"
 
 char	*ft_strdup(const char *s1)
 {
