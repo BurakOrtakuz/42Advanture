@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 18:02:00 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/02/01 21:07:23 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/02/01 21:07:35 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-#include <strings.h>
-#include <unistd.h>
-#include <stdlib.h>
 
-int	main(void)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char *a = "1234 5678 6789 0678 9067 890";
-	char *b ="asdfghjksdfghjk";
-	char c[50]="";
+	const char	nl = '\n';
 
-	int i = 0;
-	printf("%s|||\n",ft_itoa(1234567890));		
-
-
+	write(fd, s, ft_strlen(s));
+	write(fd, &nl, 1);
 }
- 

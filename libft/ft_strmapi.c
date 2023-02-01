@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 18:02:00 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/01/25 18:29:40 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/01/25 18:38:40 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-#include <strings.h>
-#include <unistd.h>
-#include <stdlib.h>
 
-int	main(void)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *a = "1234 5678 6789 0678 9067 890";
-	char *b ="asdfghjksdfghjk";
-	char c[50]="";
+	int		i;
+	char	*data;
 
-	int i = 0;
-	printf("%s|||\n",ft_itoa(1234567890));		
-
-
+	i = 0;
+	data = ft_calloc(ft_strlen(s), sizeof(char));
+	while (s[i] != '\0')
+	{
+		data[i] = f(i, s[i]);
+		i++;
+	}
+	return (data);
 }
- 

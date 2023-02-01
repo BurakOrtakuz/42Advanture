@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 18:02:00 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/01/25 17:51:28 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/01/25 18:26:56 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-#include <strings.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "stdlib.h"
 
-int	main(void)
+int	digit(int n)
 {
-	char *a = "1234 5678 6789 0678 9067 890";
-	char *b ="asdfghjksdfghjk";
-	char c[50]="";
+	int	i;
 
-	int i = 0;
-	printf("%s|||\n",ft_itoa(1234567890));		
-
-
+	i = 0;
+	while (n != 0)
+	{
+		i++;
+		n /= 10;
+	}
+	return (i);
 }
- 
+
+char	*ft_itoa(int n)
+{
+	char	*data;
+	int		i;
+
+	i = digit(n) - 1;
+	data = (char *)malloc(digit(n) * sizeof(char));
+	while (i >= 0)
+	{
+		data[i] = '0' + (n % 10);
+		n = n / 10;
+		i--;
+	}
+	return (data);
+}

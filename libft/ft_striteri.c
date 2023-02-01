@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 17:15:32 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 18:02:00 by bortakuz         ###   ########.fr       */
+/*   Created: 2023/01/25 18:40:09 by bortakuz          #+#    #+#             */
+/*   Updated: 2023/01/25 18:53:23 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-#include <strings.h>
-#include <unistd.h>
-#include <stdlib.h>
 
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char *a = "1234 5678 6789 0678 9067 890";
-	char *b ="asdfghjksdfghjk";
-	char c[50]="";
+	unsigned int	i;
 
-	int i = 0;
-	printf("%s|||\n",ft_itoa(1234567890));		
-
-
+	if (s != 0 && f != 0)
+	{
+		i = 0;
+		while (s[i])
+		{
+			f(i, s + i);
+			i++;
+		}
+	}
 }
- 
