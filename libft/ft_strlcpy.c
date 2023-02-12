@@ -6,14 +6,14 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 17:32:38 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/02 15:51:51 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:47:34 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "string.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srcsize;
 	size_t	i;

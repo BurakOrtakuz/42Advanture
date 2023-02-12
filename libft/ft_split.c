@@ -6,13 +6,9 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:46:06 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/02 16:51:15 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:47:05 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-#include "stdlib.h"
-
 
 #include "libft.h"
 #include <stdlib.h>

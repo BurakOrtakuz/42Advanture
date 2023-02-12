@@ -6,14 +6,14 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 22:21:35 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/02 05:33:13 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:46:52 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "unistd.h"
 
-int	ft_abs(int nbr)
+static int	ft_abs(int nbr)
 {
 	if (nbr < 0)
 		return (-nbr);
