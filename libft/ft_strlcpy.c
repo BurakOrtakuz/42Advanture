@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 17:32:38 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/24 18:28:45 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:51:51 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,21 @@
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t	size;
+	size_t	srcsize;
+	size_t	i;
 
-	size = 0;
-	while (src[size] != '\0' && size < dstsize - 1)
+	if (!dst || !src)
+		return (0);
+	srcsize = ft_strlen(src);
+	i = 0;
+	if (dstsize != 0)
 	{
-		dst[size] = src[size];
-		size++;
+		while (src[i] != 0 && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = 0;
 	}
-	dst[size] = '\0';
-	return (ft_strlen(src));
+	return (srcsize);
 }

@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 01:52:08 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/02 01:54:23 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:46:39 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
-	if (!lst && !del)
-		return (0);
-	temp = *lst;
-	while (temp != NULL)
+	if (*lst)
 	{
-		ft_lstdelone(temp, del);
-		temp = temp->next;
+		while (*lst)
+		{
+			temp = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = temp;
+		}
+		*lst = 0;
 	}
 }

@@ -6,23 +6,22 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 01:31:35 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 01:33:58 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:43:03 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const char *s, int c)
-{
-	char	*p;
+#include "libft.h"
 
-	p = (void *)s;
-	while (s[0] != '\0')
+void	*ft_memchr(const char *s, int c, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
 	{
-		if (s[0] == c)
-		{
-			p = (void *)s;
-			break ;
-		}
-		s++;
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)(s + i));
+		i++;
 	}
-	return (p);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 22:57:29 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/01 23:01:31 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:45:41 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int		size;
-	t_list	*temp;
+	int	size;
 
-	if (!lst)
-		return (0);
-	temp = lst;
 	size = 0;
-	while (temp->next != NULL)
+	while (lst)
 	{
+		lst = lst->next;
 		size++;
-		temp = temp->next;
 	}
 	return (size);
 }

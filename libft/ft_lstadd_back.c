@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 01:42:17 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/02 01:44:53 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:46:07 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
+	t_list	*aux_lst;
 
-	last = ft_lstlast(*lst);
-	if (last)
+	if (new)
 	{
-		last->next = new;
+		if (!*lst)
+		{
+			*lst = new;
+			return ;
+		}
+		aux_lst = ft_lstlast(*lst);
+		aux_lst->next = new;
 	}
 }

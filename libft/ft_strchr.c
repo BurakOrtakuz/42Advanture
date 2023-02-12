@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 20:58:13 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/24 20:58:45 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:47:15 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*p;
-
-	p = (char *)s;
-	while (s[0] != '\0')
+	while ((char)c != *s)
 	{
-		if (s[0] == c)
-		{
-			p = (char *)s;
-			break ;
-		}
+		if (!*s)
+			return (0);
 		s++;
 	}
-	return (p);
+	return ((char *)s);
 }

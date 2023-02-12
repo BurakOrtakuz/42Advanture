@@ -6,37 +6,46 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:21:17 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/01/25 12:30:27 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:32:46 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdlib.h"
+
+int	ft_len(const char *tmp)
+{
+	int	i;
+
+	i = 0;
+	while (tmp[i])
+		i++;
+	return (i);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*data;
+	char	*s3;
+	int		len;
 	int		i;
 	int		j;
-	int		k;
-	int		l;
 
-	l = 0;
-	k = 0;
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	data = (char *)ft_calloc(sizeof(char), i + j);
-	while (k + l < i + j)
+	j = 0;
+	i = 0;
+	len = ft_len(s1) + ft_len(s2);
+	s3 = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s3)
+		return (0);
+	while (s1[i] != '\0')
 	{
-		if (k < i)
-		{
-			data[k] = s1[k];
-			k++;
-		}
-		else if (l < j)
-		{
-			data[k] = s2[l];
-			l++;
-		}
+		s3[i] = s1[i];
+		i++;
 	}
-	return (data);
+	while (s2[j] != '\0')
+	{
+		s3[i + j] = s2[j];
+		j++;
+	}
+	s3[i + j] = '\0';
+	return (s3);
 }

@@ -6,73 +6,93 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:46:06 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/02/01 22:41:25 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:51:15 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
 
-int	counter(const char *s, char c)
+
+#include "libft.h"
+#include <stdlib.h>
+
+static int	ft_count_words(char const *str, char c)
 {
-	int	a;
+	int	i;
 	int	count;
 
+	i = 0;
 	count = 0;
-	a = 0;
-	while (s[a] != '\0')
+	while (str[i] != '\0')
 	{
-		if (s[a] == c)
+		if (str[i] == c)
+			i++;
+		else
+		{
 			count++;
-		a++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
 	}
 	return (count);
 }
 
-int	found_next(const char *s, char c)
+static char	*ft_putword(char *word, char const *s, int i, int word_len)
 {
-	int	a;
+	int	j;
 
-	a = 0;
-	while (s[a] != c && s[a] != '\0')
+	j = 0;
+	while (word_len > 0)
 	{
-		a++;
+		word[j] = s[i - word_len];
+		j++;
+		word_len--;
 	}
-	return (a);
+	word[j] = '\0';
+	return (word);
 }
 
-char	*piece(const char *s, char c, int k)
+static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 {
-	int		j;
-	int		l;
-	char	*trimmed_data;
+	int	i;
+	int	word;
+	int	word_len;
 
-	l = found_next(s + k, c);
-	trimmed_data = (char *)malloc(l * sizeof(char));
-	j = 0;
-	while (j < l)
+	i = 0;
+	word = 0;
+	word_len = 0;
+	while (word < num_words)
 	{
-		trimmed_data[j] = s[k];
-		k++;
-		j++;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			word_len++;
+		}
+		s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
+		if (!s2)
+			return (0);
+		ft_putword(s2[word], s, i, word_len);
+		word_len = 0;
+		word++;
 	}
-	return (trimmed_data);
+	s2[word] = 0;
+	return (s2);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**data;
-	int		i;
-	int		k;
+	char			**s2;
+	unsigned int	num_words;
 
-	k = 0;
-	i = 0;
-	data = (char **)malloc((ft_strlen(s) - counter(s, c)) * sizeof(char *));
-	while (i <= counter(s, c))
-	{
-		data[i] = piece(s, c, k);
-		k += found_next(s + k, c) + 1;
-		i++;
-	}
-	return (data);
+	if (!s)
+		return (0);
+	num_words = ft_count_words(s, c);
+	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
+	if (!s2)
+		return (0);
+	ft_split_words(s, c, s2, num_words);
+	return (s2);
 }
