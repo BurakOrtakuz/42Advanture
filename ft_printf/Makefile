@@ -6,12 +6,12 @@
 #    By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 14:21:05 by bortakuz          #+#    #+#              #
-#    Updated: 2023/05/09 14:48:28 by bortakuz         ###   ########.fr        #
+#    Updated: 2023/05/09 15:39:36 by bortakuz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-FLAG =  
+FLAG = -Wall -Wextra -Werror
 SRC = $(shell find . -name "ft_printf*.c")
 BONUS = $(shell find . -name "ft_printf*.c")
 OBJ = $(SRC:.c=.o)

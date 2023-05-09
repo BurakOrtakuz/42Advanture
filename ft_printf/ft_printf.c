@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:23:45 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/05/09 14:45:18 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/05/10 00:56:17 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,43 +59,38 @@ size_t	check_conversitions(const char	*string, size_t len)
 	return (0);
 }
 
-char	*put_variable(va_list	variable, char flag)
+void	put_variable(va_list	variables, char flag)
 {
-	char	*changed_variable;
-
 	if (flag == 'c')
-		changed_variable = "char";
+		ft_putchar(va_arg(variables, int));
 	else if (flag == 's')
-		changed_variable = "string";
+		ft_putstr(va_arg(variables, char *));
 	else if (flag == 'p')
-		changed_variable = "pointer";
+		ft_putstr("pointer");
 	else if (flag == 'd')
-		changed_variable = "decimal";
+		ft_unsigned(va_arg(variables, unsigned int));
 	else if (flag == 'i')
-		changed_variable = "integer";
+		ft_putnbr(va_arg(variables, int));
 	else if (flag == 'u')
-		changed_variable = "unsigned decimal";
+		ft_unsigned(va_arg(variables, unsigned int));
 	else if (flag == 'x')
-		changed_variable = "hexadecimal lowercase";
+		ft_putstr("hexadecimal lowercase");
 	else if (flag == 'X')
-		changed_variable = "hexadecimal uppercase";
+		ft_putstr("hexadecimal uppercase");
 	else if (flag == '%')
-		changed_variable = "%";
-	return (changed_variable);
+		ft_putstr("%");
 }
 
-char	*changer(const char *string, int i, va_list list)
+void	changer(const char *string, int i, va_list list)
 {
 	char	*flag;
 	size_t	j;
-	char	*variable;
 
 	j = 0;
 	flag = ft_substr(string, i, found_conversitions(string, i));
 	while (flag[j + 1] != '\0')
 		j++;
-	variable = put_variable(list, flag[j]);
-	return (variable);
+	put_variable(list, flag[j]);
 }
 
 int	ft_printf(const char *string, ...)
@@ -111,7 +106,7 @@ int	ft_printf(const char *string, ...)
 	{
 		if (string[i] == '%')
 		{
-			ft_putstr(changer(string, i, &args[j]));
+			changer(string, i, args);
 			i++;
 			j++;
 		}
