@@ -6,7 +6,7 @@
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:23:45 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/05/10 00:56:17 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/05/10 01:34:12 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,38 +59,44 @@ size_t	check_conversitions(const char	*string, size_t len)
 	return (0);
 }
 
-void	put_variable(va_list	variables, char flag)
+size_t	put_variable(va_list	variables, char flag)
 {
 	if (flag == 'c')
-		ft_putchar(va_arg(variables, int));
+		return (ft_putchar(va_arg(variables, int)));
 	else if (flag == 's')
-		ft_putstr(va_arg(variables, char *));
+		return (ft_putstr(va_arg(variables, char *)));
 	else if (flag == 'p')
-		ft_putstr("pointer");
+		return (ft_point(va_arg(variables, unsigned long), 1));
 	else if (flag == 'd')
-		ft_unsigned(va_arg(variables, unsigned int));
+		return (ft_unsigned(va_arg(variables, unsigned int)));
 	else if (flag == 'i')
-		ft_putnbr(va_arg(variables, int));
+		return (ft_putnbr(va_arg(variables, int)));
 	else if (flag == 'u')
-		ft_unsigned(va_arg(variables, unsigned int));
+		return (ft_unsigned(va_arg(variables, unsigned int)));
 	else if (flag == 'x')
-		ft_putstr("hexadecimal lowercase");
+		return (ft_hexadecimal(va_arg(variables, unsigned int), 'x'));
 	else if (flag == 'X')
-		ft_putstr("hexadecimal uppercase");
+		return (ft_hexadecimal(va_arg(variables, unsigned int), 'X'));
 	else if (flag == '%')
-		ft_putstr("%");
+		return (ft_putstr("%"));
+	else
+		return (0);
 }
 
-void	changer(const char *string, int i, va_list list)
+size_t	changer(const char *string, int i, va_list list)
 {
 	char	*flag;
 	size_t	j;
+	size_t	lenght;
 
+	lenght = 0;
 	j = 0;
 	flag = ft_substr(string, i, found_conversitions(string, i));
 	while (flag[j + 1] != '\0')
 		j++;
-	put_variable(list, flag[j]);
+	lenght += put_variable(list, flag[j]);
+	free(flag);
+	return (lenght);
 }
 
 int	ft_printf(const char *string, ...)
@@ -98,7 +104,9 @@ int	ft_printf(const char *string, ...)
 	va_list	args;
 	size_t	i;
 	size_t	j;
+	size_t	lenght;
 
+	lenght = 0;
 	j = 0;
 	i = 0;
 	va_start(args, string);
@@ -106,14 +114,17 @@ int	ft_printf(const char *string, ...)
 	{
 		if (string[i] == '%')
 		{
-			changer(string, i, args);
+			lenght += changer(string, i, args);
 			i++;
 			j++;
 		}
 		else
+		{
 			write(0, &string[i], 1);
+			lenght++;
+		}
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (lenght);
 }

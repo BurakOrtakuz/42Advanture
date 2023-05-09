@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_variable_changes_utils.c                        :+:      :+:    :+:   */
+/*   ft_printf_variable_changes_utils.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortakuz <bortakuz@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 22:55:42 by bortakuz          #+#    #+#             */
-/*   Updated: 2023/05/09 23:05:37 by bortakuz         ###   ########.fr       */
+/*   Updated: 2023/05/10 01:23:15 by bortakuz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,10 @@ void	*ft_memset(void *b, int c, size_t len)
 		i++;
 	}
 	return (b);
+}
+
+size_t	ft_putchar(char s)
+{
+	write(0, &s, 1);
+	return (1);
 }
