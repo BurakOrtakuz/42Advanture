@@ -1,0 +1,71 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red252\green9\blue7;\red0\green0\blue0;\red38\green255\blue255;
+\red231\green62\blue255;\red242\green104\blue255;\red0\green0\blue0;\red255\green255\blue255;\red255\green255\blue11;
+\red64\green118\blue25;\red181\green69\blue16;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c15764\c0;\cssrgb\c0\c0\c0;\cssrgb\c8302\c100000\c100000;
+\cssrgb\c93328\c38659\c100000;\cssrgb\c96901\c52715\c100000;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c100000\c100000\c0;
+\cssrgb\c30912\c52771\c12623;\cssrgb\c76863\c34902\c6667;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww25060\viewh25480\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs48 \cf2 \expnd0\expndtw0\kerning0
+\'d6ncelikle d\'f6k\'fcmanda sorulmas\uc0\u305  s\'f6ylenen sorularla ba\u351 layal\u305 m.\cf3 \
+\cf4 1- Savunma s\uc0\u305 ras\u305 nda se\'e7ti\u287 iniz i\u351 letim sistemi hakk\u305 nda sorular sorulacak. \'d6rne\u287 in aptitude ve apt veya SELinux veya\
+AppArmor nedir bunlar\uc0\u305 n farklar\u305 n\u305  a\'e7\u305 klaman\u305 z istenece. K\u305 sacas\u305  kulland\u305 \u287 \u305 n \u351 eyin ne oldu\u287 unu anla.\cf3 \
+\
+	\cf5 AppArmor nedir?\cf3 \
+		AppArmor anlad\uc0\u305 \u287 \u305 m kadar\u305 yla chmoddaki gibi izinlere ek olarak ekstra izinler sa\u287 layarak d\u305 \u351 ar\u305 dan sald\u305 r\u305  say\u305 labilecek\
+eri\uc0\u351 imleri engelliyor. AppArmor bir program\u305 n sadece belirli \u351 eyler yapabilmesine veya haf\u305 zan\u305 n sadece belirli bir b\'f6l\'fcm\'fcne\
+eri\uc0\u351 im sa\u287 lamas\u305 na imkan tan\u305 yor. SELinux ile farklar\u305 ndan bir tanesi ise i\u351 letim sistemine ba\u287 l\u305  de\u287 il sadece bir servis olmas\u305 .\
+3 farkl\uc0\u305  \'e7al\u305 \u351 ma \u351 ekli var. Aa-status yazd\u305 \u287 \u305 m\u305 zda bu durumlar\u305  g\'f6rebiliriz. Enforce olan yerde yazan programlar belirli bir \u351 ey\
+d\uc0\u305 \u351 \u305 nda hareket etmeye \'e7al\u305 \u351 t\u305 \u287 \u305 nda onlar\u305  engelliyor. Complain olan yerde ise d\u305 \u351 ar\u305  \'e7\u305 kmalar\u305 na izin veriyor lakin bunun kayd\u305 n\u305 \
+Tutuyor. Unconfined k\uc0\u305 sm\u305  ise o i\u351 lemin her \u351 eyi yapabilece\u287 i anlat\u305 yor.\
+	\cf5 SELinux nedir?\cf3 \
+		SeLinux AppArmor ile ayn\uc0\u305  i\u351 i yap\u305 yor. SeLinux daha karma\u351 \u305 k ve sistem seviyesinde engelleme yap\u305 yor. AppArmor\
+Uygulama seviyesinde engelleme yap\uc0\u305 yor. Bir di\u287 er fark ise SeLinux \'e7al\u305 \u351 madan \'f6nce compile edilmesi gerekiyorken \
+AppArmor unix stili basit metin dosyalar\uc0\u305  ile \'e7al\u305 \u351 \u305 yor.\
+\
+\cf4 	\cf6 Apt ile aptitute aras\uc0\u305 ndaki farklar\cf4 \
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb8 Apt ve aptitude, Linux tabanl\uc0\u305  i\u351 letim sistemlerinde paket y\'f6netimi yapmak i\'e7in kullan\u305 lan iki ara\'e7t\u305 r. Aptitude, kullan\u305 c\u305  dostu bir aray\'fcz sunar ve paket y\'f6netimi i\u351 lemlerinde daha fazla \'f6neri sunar. Apt, daha h\u305 zl\u305  ve kolay kullan\u305 ma sahiptir ve depo y\'f6netimi i\u351 lemleri i\'e7in daha do\u287 rudan bir yakla\u351 \u305 m sunar. Her ikisi de ba\u287 \u305 ml\u305 l\u305 k y\'f6netimini yapar ve paket kurulumu, g\'fcncelleme ve kald\u305 rma i\u351 lemlerini yapabilirler.\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb1 \
+2-Yeni kullan\uc0\u305 c\u305  olu\u351 turma ve onu bir gruba ata.\
+	\cf9 \
+		\cf10 sudo adduser <username> ile kullan\uc0\u305 c\u305  olu\u351 turuyoruz\cf7 \
+		sudo getnent passwd <username> veya id <username> ile olu\uc0\u351 turulup olu\u351 turulmad\u305 \u287 \u305 n\u305  kontrol et.\
+		sudo charge -l <username> ile \uc0\u351 ifre kurallar\u305 n\u305 n \'e7al\u305 \u351 \u305 p \'e7al\u305 \u351 mad\u305 \u287 \u305 n\u305  kontrol et.\
+		groups <username> ile kullan\uc0\u305 c\u305 n\u305 n hangi gruba \'fcye oldu\u287 unu \'f6\u287 ren.\
+\
+		sudo deluser <username> ile kullan\uc0\u305 c\u305  sil.\
+		sudo deluser \'97remove-home <username> ile kullan\uc0\u305 c\u305 y\u305  ana dizinden kald\u305 r.\
+		sudo deluser \'97remove-all-files <username> ile kullan\uc0\u305 c\u305 ya ili\u351 kin b\'fct\'fcn dosyalar\u305  sil.\
+		/etc/passwd yolunda b\'fct\'fcn kullan\uc0\u305 c\u305 lar\u305  bulabiliriz.\
+\
+		sudo passwd <username> ile \uc0\u351 ifreyi de\u287 i\u351 tirebiliriz.\
+\
+		\cf10 sudo addgroup <grupad\uc0\u305 > ile yeni grup olu\u351 turulur.\cf7 \
+\pard\pardeftab720\partightenfactor0
+\cf10 		sudo adduser <username> <grupad\uc0\u305 > ile gruba kullan\u305 c\u305  eklenir.\
+		\cf7 Groups <username> ile gruba eklenip eklenmedi\uc0\u287 i kontrol edilir.\
+\
+MONITORING.SH\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls1\ilvl0
+\fs32 \cf11 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
+#!/bin/bash\uc0\u8232 arc=$(uname -a)\u8232 pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l)\u8232 vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)\u8232 fram=$(free -m | grep Mem: | awk '\{print $2\}')\u8232 uram=$(free -m | grep Mem: | awk '\{print $3\}')\u8232 pram=$(free | grep Mem: | awk '\{printf("%.2f"), $3/$2*100\}')\u8232 fdisk=$(df -Bg | grep '^/dev/' | grep -v '/boot$' | awk '\{ft += $2\} END \{print ft\}')\u8232 udisk=$(df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '\{ut += $3\} END \{print ut\}')\u8232 pdisk=$(df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '\{ut += $3\} \{ft+= $2\} END \{printf("%d"), ut/ft*100\}')\u8232 cpul=$(top -bn1 | grep '^%Cpu' | cut -c 9- | xargs | awk '\{printf("%.1f%%"), $1 + $3\}') lb=$(who -b | awk '$1 == "system" \{print $3 " " $4\}')\u8232 lvmt=$(lsblk -o TYPE | grep "lvm" | wc -l)\u8232 lvmu=$(if [ $lvmt -eq 0 ]; then echo no; else echo yes; fi)\u8232 # net-tools araclari gerekli:\u8232 ctcp=$(cat /proc/net/tcp | wc -l | awk '\{print $1-1\}' | tr '' ' ')\u8232 ulog=$(users | wc -w)\u8232 ip=$(hostname -I)\u8232 mac=$(ip link show | awk '$1 == "link/ether" \{print $2\}')\u8232 # Journalctl calistirilabilir cunku komut dosyasi sudo cron'dan yurutulur.\u8232 cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l) \u8232 wall " #Architecture: $arc 
+\fs24 \cf3 \uc0\u8232 
+\fs32 \cf11 #CPU physical: $pcpu\uc0\u8232 #vCPU: $vcpu\u8232 #Memory Usage: $uram/$\{fram\}MB ($pram%) #Disk Usage: $udisk/$\{fdisk\}Gb ($pdisk%) #CPU load: $cpul\u8232 #Last boot: $lb\u8232 #LVM use: $lvmu\u8232 #Connexions TCP : $ctcp ESTABLISHED\u8232 #User log: $ulog\u8232 #Network: IP $ip ($mac)\u8232 #Sudo: $cmds cmd\cf3 " 
+\fs24 \uc0\u8232 \
+\pard\pardeftab720\partightenfactor0
+
+\fs48 \cf3 \
+	\
+\
+}
